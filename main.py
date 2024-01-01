@@ -24,6 +24,19 @@ class SinglyLinkedList:
                 prev.next = new_node
                 new_node.next = current.next
 
+    def delete(self, index):
+        if self.head is None:
+            print("The list is empty")
+        else:
+            i = 0
+            prev = None
+            current = self.head
+            while index > i and current.next is not None:
+                prev = current
+                current = current.next
+                i += 1
+            prev.next = current.next
+
 
 linkedList = SinglyLinkedList()
 linkedList.insert(0, 10)
@@ -33,4 +46,6 @@ linkedList.insert(3, 40)
 
 linkedList.insert(1, 100)
 
-print(linkedList.head.next.data)
+print(linkedList.head.next.data)  # 100
+linkedList.delete(1)
+print(linkedList.head.next.data)  # 30
