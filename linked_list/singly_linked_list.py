@@ -1,7 +1,7 @@
 class Node:
-    def __init__(self, data, next: None):
+    def __init__(self, data):
         self.data = data
-        self.next = next
+        self.next = None
 
 
 class SinglyLinkedList:
@@ -10,7 +10,7 @@ class SinglyLinkedList:
 
     def insert(self, index, data):
         if index >= 0:
-            new_node = Node(data, None)
+            new_node = Node(data)
             if self.head is None:
                 self.head = new_node
             else:
