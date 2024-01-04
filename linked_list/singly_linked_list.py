@@ -48,6 +48,17 @@ class SinglyLinkedList:
                 print(current.data)
                 current = current.next
 
+    def get_node_at(self, idx):
+        if self.head is None:
+            print("The list is empty")
+        else:
+            current = self.head
+            count = 0
+            while idx >= count and current:
+                current = current.next
+                count += 1
+            return current
+
 
 linkedList = SinglyLinkedList()
 linkedList.insert(0, 10)
@@ -61,3 +72,5 @@ linkedList.insert(1, 100)
 # linkedList.delete(1)
 # print(linkedList.head.next.next.next.next.next.next.data)  # 30
 linkedList.traverse()
+node = linkedList.get_node_at(0)
+print(node.data)
